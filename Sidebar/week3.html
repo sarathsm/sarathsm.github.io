@@ -84,43 +84,85 @@
 							<p>&nbsp  </p>
 							<img src="img/mod1.jpg" >
 							<p>&nbsp  </p>
+							<p> The first step is to Fix the sacrificial layer PCB on to the modela base plate using double sided tape. We must ensure that
+							it is alligned perfectly to the orgin. </p>
 							<img src="img/mod1a.jpg" >
 							<p>&nbsp  </p>
+							
+							<p>The second step is to Fix the PCB to be milled on to the modela base plate over the sacrificial layer using double sided tape.</p>
 							<img src="img/mod2.jpg" >
 							<p>&nbsp  </p>
+							
+							<p>Proper care should also be taken to make sure that there are no uneven surfaces as it will otherrwise result in improper milling.</p>
 							<img src="img/mod3.jpg" >
 							<p>&nbsp  </p>
+							
+							<P>Next step is to fix the proper bit for milling. The 1/64" bit is used for milling tracks and 1/32" bit for milling out the unused areas and cutting board edges. </p>
 							<img src="img/mod4.jpg" >
 							<p>&nbsp  </p>
+							
+							<p>The bits are fixed with the help of allen key tool. This is done in the view mode of Modela. At first the bit is kept well above the desired height to position the Z manually. Once
+							the orgin is chosen and the head is moved to the desired location,( lower the bit using UP/DOWN keys / adjusting the bit height fixed with the help of allen key ) of modela to touch the PCB.
+							Now tighten the bit in the chosen location, and you are ready to start milling. </p>							
 							<img src="img/mod5.jpg" >
 							<p>&nbsp  </p>
+							
+							<p>Picture shows the bit fixed to the desired (x,y) ready for milling. Care should be taken to select the orgin with enough clearance from the edges. </p>
 							<img src="img/mod6.jpg" >
 							<p>&nbsp  </p>
+							
+							<p> Moving on to the software side, to control the modela, open terminal and type 'fab' which will invoke the fab modules service menu as shown.</p>
+							<p> Here choose input format as " image " and output to process as " Roland MDX 20 mill (.rml) " </p>
 							<img src="img/mod7.png" >
 							<p>&nbsp  </p>
+							
+							<p> Unlike how it should open the interface to control modela, I received a serial Exception as shown below. </P>
 							<img src="img/mod9.png" >
 							<p>&nbsp  </p>
+							
+							<P> This happens beacuse the interface software is unable to get connected with the Modela machine. </p>
+							<p> To fix this problem, open another terminal and type as follows, </p>
+							<pre><code class="language-css">$ sudo chmod 666 /dev /ttyUSB0</code></pre>
 							<img src="img/mod10.png" >							
 							<p>&nbsp  </p>
+							
+							<P> This command will reestablish communication with modela and the user interface will be opened.</p>
 							<img src="img/mod11.png" >
 							<p>&nbsp  </p>
+							
+							<p> The software interface for modela provides options to choose the milling bit preferred ( use 1/64" for milling tracks ) , the option to input file to be milled ( The PNG format of the tracks ), path settings, depth and many other settings to fine tune the process. </p>
+							<P> Franscisco asked all of us to first mill and assemble the FabISP programmer PCB as it will be further used in the upcoming embedded sessions </p>
 							<img src="img/mod12.png" >
 							<p>&nbsp  </p>
-							<img src="img/mod14.png" >
-							<p>&nbsp  </p>
+							
+							<p> We can visualize the board dimensions, path it will be using to move the head etc, once it is verified and found correct, choose make .rml and send it. </p>
 							<img src="img/mod15.png" >
 							<p>&nbsp  </p>
+							
+							<p> The ouput screen will show the estimated time for completion and the machine will start milling. </p>
 							<img src="img/mod17.png" >
 							<p>&nbsp  </p>
+							
+							<p> Once the milling of tracks are finished, inorder to cut the board edge, first change the bit to 1/32", then load the board edge PNG file and repeat the same process that we did while milling the tracks. </p>
 							<img src="img/mod19.png" >
-							<p>&nbsp  </p>
+							<p>&nbsp  </p> 
+						
+							<p> The following picture shows the milled PCB, proper care should be taken while taking out the cut PCB as there is always chance to break it while pulling out from the base. </p>
 							<img src="img/mod21.jpg" >
 							<p>&nbsp  </p>
+							
+							<p> Starting to populate the FabISP pcb starting with the ATTINY microcontroller first. </p>
 							<img src="img/mod22.jpg" >							
 							<p>&nbsp  </p>
+							
+							<p> The completly finished FabISP PCB. </P>
 							<img src="img/mod23.jpg" >
 							
 							<p>&nbsp  </p>
+							
+							 <p> The file used for the process can be downloaded from <a href="sources/fabisp.rar">here </a> </p>	
+							<p>&nbsp  </p>
+							
 							<p>&nbsp  </p>
 
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
@@ -186,38 +228,63 @@
 							<p>&nbsp  </p>
 							<img src="img/k1.png" >
 							<p>&nbsp  </p>
+							
+							<p>Franscisco introduced us Kokopelli. We started playing aroung it by downloading the FTDI hello world examples shown in the following screen.. </p>
 							<img src="img/k2.png" >
 							<p>&nbsp  </p>
+							
+							<p> We added a button and LED the exiting board and learned how to tinker with kokopelli </p>
 							<img src="img/k3.png" >
 							<p>&nbsp  </p>
+							
+							<p> In kokopelli we never draw a circuit, instead we write codes for that as shown below. The graphical reasult is shown to the right. </p>
 							<img src="img/k4.png" >
 							<p>&nbsp  </p>
+							
+							<p> Once the initial starting trouble was overcome, playing around kokopeilli was fairly straight forward and easy to understand. We should understand how each
+							component is added as classes and how to place them in the borad refereing to another component already exixting in the board. </p>
 							<img src="img/k5.png" >
 							<p>&nbsp  </p>
-							<img src="img/k6.png" >
-							<p>&nbsp  </p>
+							
+							<p> I completed the board with out much difficulty and it is ready to be exported for miling,  while exporting we can mention the resolution of pixels.
+							Initially I gave 10, but it was not sufficient and then I repeated the same with a resolution setting of 40. </p>
 							<img src="img/k7.png" >
 							<p>&nbsp  </p>
+							
+							<p> Inorder to export the traces and board outline seperately, we have to comment or uncomment the desired output settings available 
+							in the initial part of the code as shown below.</p>
 							<img src="img/k8.png" >
-							<p>&nbsp  </p>
+							<p>&nbsp  </p 
+							
+							<P>The image files are ready to be milled and the screen shots of the same are attached for reference. I am not givng a detailed description
+							about how to mill PCBs as it is already explained in the <a href="#1">Modella PCB Milling section.</a> </p>
+							
 							<img src="img/k9.png" >	
 							<p>&nbsp  </p>
-							<img src="img/k10.png" >							
-							<p>&nbsp  </p>
+							
+							<p> Milling the traces.. </p>
 							<img src="img/k11.png" >
 							<p>&nbsp  </p>
-							<img src="img/k12.png" >
-							<p>&nbsp  </p>
+							
+							<p> Cutting the board edges.. </p>
 							<img src="img/k14.png" >
 							<p>&nbsp  </p>
-							<img src="img/k15.png" >
-							<p>&nbsp  </p>
+							
+							<p> The completed PCB.</P>
 							<img src="img/k16.jpg" >
 							<p>&nbsp  </p>
+							
+							
+							<P> Now it is time to assemple the PCB, I had some confusion while trying to find the Anode and Cathode of the SMD LED, The following diagrams are for reference. </p>
+							<img src="img/k15.png" >
+							<p>&nbsp  </p>
+							
+							<p> The completly assembled PCB.
 							<img src="img/k17.jpg" >
 							<p>&nbsp  </p>
 				
-							
+							<p> The file used for the process can be downloaded from <a href="sources/kokopelli.rar">here </a> </p>	
+							<p>&nbsp  </p>
 
 
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
@@ -271,45 +338,77 @@
 					<a name="3"></a>
                         <h1> EMBEDDED PROGRAMMING </h1>
 
-							<p> FAB ISP --   STORY WITH Franscisco - Exploring the Mystery with Crystal Osc !! </P>
+							<p> FAB ISP --   STORY WITH FRANCISCO - Exploring the Mystery of Crystal Osc !! </P>
 
 							<p>&nbsp  </p>
 							<img src="img/em1.jpg" >
 							<p>&nbsp  </p>
+							
+							<p>Downloading the FabISP firmware to the ISP programmer I assembled. </p>
 							<img src="img/fw1.png" >
 							<p>&nbsp  </p>
+							
+							<p> Changes to be made while using the AVR programer.</p>
 							<img src="img/fw2.png" >
 							<p>&nbsp  </p>
+							
+							<p> Initially I received the following error as I did not had the proper compiler installed. </p>
 							<img src="img/fw3.png" >
 							<p>&nbsp  </p>
 							<img src="img/fw4.png" >
 							<p>&nbsp  </p>
+							 
+							<p> Debugging and trouble shooting the error.. </p>
 							<img src="img/fw5.png" >
 							<p>&nbsp  </p>
+							
+							<p> Fixed the error by installig the proper versions of compiler. </p>
 							<img src="img/fw6.png" >
 							<p>&nbsp  </p>
+							
+							<p> Generating the Hex to be dumped to the Microcontroller. </p>
 							<img src="img/fw7.png" >
 							<p>&nbsp  </p>
-							<img src="img/em2.jpg" >
-							<p>&nbsp  </p>
-							<img src="img/em3.jpg" >
-							<p>&nbsp  </p>
-							<img src="img/em4.jpg" >
-							<p>&nbsp  </p>
+							
+							<P> All the twist started at this point when I tried to dump the firmware to the ISP module.</p>
 							<img src="img/fw8.png" >
 							<p>&nbsp  </p>
+							
+							<p> In noway the program was geting loaded into the ISP microcontroller and kept on giving the error as shown below. </p>
 							<img src="img/fw9.png" >
 							<p>&nbsp  </p>
-							<img src="img/em5.jpg" >
+							
+							
+							<p> We suspected the microcontroller to be faulty and tried to change that, but that did not solve the problem </p>
+							<img src="img/em2.jpg" >
 							<p>&nbsp  </p>
+							
+							<p> Me and Francisco were never ready give up and wanted to see it work this day itself. <p>
+							<img src="img/em3.jpg" >
+							<p>&nbsp  </p>
+							
+							<p> We kept on trying many options till late night. We tried to change the crystal and also tried to reflow all the solderings,
+							but to our great disappointment nothng worked and we had to finally call it a day. </p>
+							<img src="img/em4.jpg" >
+							<p>&nbsp  </p>
+							
+							<p>An intense googling did help Francisco to thnik in the direction of the least suscpected cable that we used for connecting the ISP module to be defective.
+							He asked me to try changing that, and to all our great surprise the ISP got programmed flawlessly :-) </p>
+							<img src="img/em5.jpg" >
+							<p>&nbsp  </p> 
+							
+							<p> The chances are very less to suspect the cable as it was without any problem powering the module, well to our great relief we fixed the problem and my ISP module is ready finally :-) </p>
 							<img src="img/fw10.png" >							
 							<p>&nbsp  </p>
-							<img src="img/fw11.png" >
-							<p>&nbsp  </p>
+ 
+							<p> My FabISP module sucessfully being programmed finally by the AVR programmer.</p>
 							<img src="img/em6.jpg" >							
 							<p>&nbsp  </p>		
+							
+							<p> More about real world application of embedded programing can be found on <a href="week4.html#3">my project documentation section.</a>
 
-
+							<p>&nbsp  </p>
+							
          				   <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
                 </div>
@@ -431,15 +530,33 @@
 
 							<img src="img/int1.png" >
 							<p>&nbsp  </p>
+							
+							<p> Links to add ATTINY library with Arduino. </p>
 							<img src="img/int2.png" >
 							<p>&nbsp  </p>
+							
+							<p> Installing and Updating the Library. </p>
 							<img src="img/int3.png" >
 							<p>&nbsp  </p>
+							
+							<p> Installing Serial Port Monitoring Software to control and read data from the Microcontroller using PCs Serial Port. </p>
 							<img src="img/int4.png" >
 							<p>&nbsp  </p>
-
-						
-					
+ 
+						    <p>Inorder to learn interface and interactive programing we tried the following with the FTDI Hello world board developed using Kokopelli. </p>
+							<p>&nbsp  </p>
+							<li>Led Blinking </li>
+							<li>Button Controlled LED</li>
+							<li>Serial Interface</li>
+							<li>Control Over Serial Port</li>
+							<p>&nbsp  </p>
+							
+							<P> The following are screenshots for reference. </p>
+							<img src="img/int5.png" >
+							<p>&nbsp  </p>
+							
+							<p> The file used for the process can be downloaded from <a href="sources/arduino.rar">here </a> </p>	
+							<p>&nbsp  </p>
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
                 </div>
